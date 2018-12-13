@@ -30,23 +30,41 @@ syscheck (syscheck/rootcheck);
 alerts (alert);
 active-response (command/active-response);
 collector (localfile);
-La sección global
+### La sección global
 En éste apartado indicamos el correo electrónico que recibirá las notificaciones y las listas blancas de IP.
 
+<ossec_config>
+    <global>
+        <!--
+        Global options here
+        -->
+    </global>
+</ossec_config>
 
-Sección Collector
+### Sección Collector
 Lista de todos los ficheros que utilizará el programa para monitorizar.
 
+<ossec_config> 
+    <localfile> 
+        <! - 
+        Opciones de Localfile aquí 
+        -> 
+    </localfile> 
+</ossec_config>
 
-Syscheck
+### Syscheck
 En ésta sección indicamos la frecuencia de los chequeos, los directorios a revisar y los que queremos excluir.
 
+<syscheck>
+</syscheck>
 
-Rules
+### Rules
 Sección donde se indican las ubicaciones de los ficheros que contienen las reglas.
 
+<ruleset>
+</ruleset>
 
-Alerts
+### Alerts
 Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado inútil y 16 es el más alto, considerado crítico. Depende del nivel de alerta se envía o no un correo electrónico. Funcionan los envíos a partir del nivel 7. Dicho parámetro se puede modificar.
 
 <ossec_config> 
