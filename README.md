@@ -12,9 +12,9 @@ Se pueden modificar los parámetros del programa, modificando el fichero ossec.c
 ## Configurar OSSEC
 Si visitamos el directorio /var/ossec, como usuario root, veremos lo siguientes directorios:
 
-/bin – Aquí tenemos almacenados todos los binarios ejecutables.
-/etc – Los ficheros de configuración, entre los que se encuentran  ossec.conf
-/logs – Importantísimo directorio donde tenemos todos los ficheros log. Cabe resaltar ossec.log y alerts/alerts.log
+1.  /bin – Aquí tenemos almacenados todos los binarios ejecutables.
+2.  /etc – Los ficheros de configuración, entre los que se encuentran  ossec.conf
+c) /logs – Importantísimo directorio donde tenemos todos los ficheros log. Cabe resaltar ossec.log y alerts/alerts.log
 /queue –  Se almacenan los ficheros de colas de proceso.
 /rules – Aquí tenemos los ficheros  que utiliza el programa para generar las alertas.
 /stats – Para generar las estadísticas
