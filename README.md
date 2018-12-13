@@ -67,30 +67,40 @@ Sección donde se indican las ubicaciones de los ficheros que contienen las regl
 ### Alerts
 Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado inútil y 16 es el más alto, considerado crítico. Depende del nivel de alerta se envía o no un correo electrónico. Funcionan los envíos a partir del nivel 7. Dicho parámetro se puede modificar.
 
-<ossec_config> 
+    a) <ossec_config> 
     <alerts> 
         <! - 
         opciones de alertas aquí 
         -> 
     </alerts> 
-</ossec_config>
+    </ossec_config>
+
+## Crear "Ossec.conf"
 
 ### Alertas 
 
+    a) <ossec_config> 
+       <alerts> 
+        <! - 
+        opciones de alertas aquí 
+        -> 
+        </alerts> 
+        </ossec_config>
+
 #### Opciones 
 
-email_alert_level
+#### email_alert_level
 Nivel mínimo de alerta para enviar notificaciones por correo electrónico.
 
 Predeterminado: 7
 
 Permitido: Cualquier nivel de 1 a 16.
 
-Nota
+#### Nota
 
 Este es el nivel mínimo para que una alerta active un correo electrónico. Esto anula los niveles de alerta granular de correo electrónico. Establecer esto en 10 evitaría que los correos electrónicos para alertas a niveles inferiores a 10 se envíen a pesar de las configuraciones en la configuración de correo electrónico granular. Las reglas individuales pueden anular esto con la opción alert_by_email .
 
-log_alert_level
+#### log_alert_level
 Nivel mínimo de alerta para almacenar los mensajes de registro.
 
 Predeterminado: 1
@@ -99,37 +109,46 @@ Permitido: Cualquier nivel de 1 a 16.
 
 ### Cliente
 
-Opciones 
-server-ip
+    a) <ossec_config> 
+       <client> 
+        <! - 
+        opciones de cliente aquí 
+        -> 
+        </client> 
+        </ossec_config>
+
+#### Opciones 
+
+#### server-ip
 Especifique la dirección IP del servidor de análisis.
 
 Permitido: Cualquier dirección IP válida
 
-server-hostname
+#### server-hostname
 Especifique el nombre de host del servidor de análisis
 
 Permitido: Cualquier nombre de host válido
 
-port
+#### port
 Especifica el puerto para enviar los eventos (debe ser el mismo que el utilizado por el servidor de análisis).
 
 Predeterminado: 1514
 
 Permitido: cualquier número de puerto de 1 a 65535
 
-config-profile
+#### config-profile
 Especifica los agent.confperfiles que utilizará el agente. Se pueden incluir múltiples perfiles, separados por una coma y un espacio.
 
-Ejemplo:
+#### Ejemplo:
 
-<client> 
-  <config-profile> webserver, lowmemory </config-profile> 
-</client>
+    a) <client> 
+       <config-profile> webserver, lowmemory </config-profile> 
+       </client>
 
-notify_time
+#### notify_time
 Especifica el tiempo en segundos entre los mensajes de información enviados por los agentes al servidor.
 
-time-reconnect
+#### time-reconnect
 Tiempo en segundos hasta un intento de reconexión. Esto debe establecerse en un número más alto que el notificar tiempo.
 
 
@@ -140,34 +159,34 @@ Tiempo en segundos hasta un intento de reconexión. Esto debe establecerse en un
 ### Syslog
 
     a)  <ossec_config> 
-    <syslog_output> 
+        <syslog_output> 
         <! - 
         Opciones de salida de Syslog aquí 
         -> 
-    </syslog_output> 
-    </ossec_config>
+        </syslog_output> 
+        </ossec_config>
 
 #### Opciones
-###### server
+##### server
 Dirección IP del servidor syslog.
 Permitido: cualquier dirección IP válida
-##### port
+#### port
 Puerto para reenviar alertas a.
 Predeterminado 514
 Permitido: Cualquier puerto válido
-###### level
+#### level
 Nivel mínimo de alerta de las alertas a reenviar.
 Permitido: 1 - 16
-###### group
+#### group
 Se reenviarán las alertas pertenecientes a este grupo.
 Permitido: Cualquier grupo válido. Separe los múltiples grupos con el caracter de pipe ( |).
-###### Ejemplos:
+#### Ejemplos:
 <group> syscheck </group> 
 <group> authentication_failure | authentication_success </group>
 rule_id
 Las alertas que coincidan con esta rule_id se reenviarán.
 Permitido: cualquier regla_id válida
-###### location
+#### location
 Las alertas de esta ubicación serán reenviadas.
 Permitido: cualquier ubicación de archivo de registro válida
 
