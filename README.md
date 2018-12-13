@@ -33,55 +33,60 @@ collector (localfile);
 ### La sección global
 En éste apartado indicamos el correo electrónico que recibirá las notificaciones y las listas blancas de IP.
 
-<ossec_config>
-    <global>
-        <!--
-        Global options here
+    a) <ossec_config>
+       <global>
+       <--
+       Global options here
         -->
-    </global>
-</ossec_config>
+       </global>
+       </ossec_config>
 
 ### Sección Collector
 Lista de todos los ficheros que utilizará el programa para monitorizar.
 
-<ossec_config> 
-    <localfile> 
-        <! - 
-        Opciones de Localfile aquí 
+    b) <ossec_config> 
+       <localfile> 
+       <! - 
+       Opciones de Localfile aquí 
         -> 
-    </localfile> 
-</ossec_config>
+       </localfile> 
+       </ossec_config>
 
 ### Syscheck
 En ésta sección indicamos la frecuencia de los chequeos, los directorios a revisar y los que queremos excluir.
 
-<syscheck>
-</syscheck>
+    c) <syscheck>
+       </syscheck>
 
 ### Rules
 Sección donde se indican las ubicaciones de los ficheros que contienen las reglas.
 
-<ruleset>
-</ruleset>
+    d) <ruleset>
+       </ruleset>
 
 ### Alerts
 Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado inútil y 16 es el más alto, considerado crítico. Depende del nivel de alerta se envía o no un correo electrónico. Funcionan los envíos a partir del nivel 7. Dicho parámetro se puede modificar.
 
     a) <ossec_config> 
-    <alerts> 
-        <! - 
+       <alerts> 
+        < - 
         opciones de alertas aquí 
         -> 
-    </alerts> 
-    </ossec_config>
+        </alerts> 
+        </ossec_config>
 
 ## Crear "Ossec.conf"
+### Global
+
+
+### Archivo local
+
 
 ### Alertas 
 
-    a) <ossec_config> 
+     ) <ossec_config> 
        <alerts> 
-        <! - 
+        <- 
         opciones de alertas aquí 
         -> 
         </alerts> 
@@ -109,9 +114,9 @@ Permitido: Cualquier nivel de 1 a 16.
 
 ### Cliente
 
-    a) <ossec_config> 
+     ) <ossec_config> 
        <client> 
-        <! - 
+        <- 
         opciones de cliente aquí 
         -> 
         </client> 
@@ -141,7 +146,7 @@ Especifica los agent.confperfiles que utilizará el agente. Se pueden incluir m�
 
 #### Ejemplo:
 
-    a) <client> 
+     ) <client> 
        <config-profile> webserver, lowmemory </config-profile> 
        </client>
 
@@ -152,15 +157,14 @@ Especifica el tiempo en segundos entre los mensajes de información enviados por
 Tiempo en segundos hasta un intento de reconexión. Esto debe establecerse en un número más alto que el notificar tiempo.
 
 
-### Global
-### Archivo local
+
 ### Remoto
 ### Rootcheck
 ### Syslog
 
-    a)  <ossec_config> 
+     )  <ossec_config> 
         <syslog_output> 
-        <! - 
+        <- 
         Opciones de salida de Syslog aquí 
         -> 
         </syslog_output> 
