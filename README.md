@@ -14,22 +14,23 @@ Si visitamos el directorio /var/ossec, como usuario root, veremos lo siguientes 
 
 1.  /bin – Aquí tenemos almacenados todos los binarios ejecutables.
 2.  /etc – Los ficheros de configuración, entre los que se encuentran  ossec.conf
-c) /logs – Importantísimo directorio donde tenemos todos los ficheros log. Cabe resaltar ossec.log y alerts/alerts.log
-/queue –  Se almacenan los ficheros de colas de proceso.
-/rules – Aquí tenemos los ficheros  que utiliza el programa para generar las alertas.
-/stats – Para generar las estadísticas
-/tmp – Directorio temporal
-/var – “pid” para los procesos de OSSEC
+3.  /logs – Importantísimo directorio donde tenemos todos los ficheros log. Cabe resaltar ossec.log y alerts/alerts.log
+4.  /queue –  Se almacenan los ficheros de colas de proceso.
+5.  /rules – Aquí tenemos los ficheros  que utiliza el programa para generar las alertas.
+6.  /stats – Para generar las estadísticas
+7.  /tmp – Directorio temporal
+8.  /var – “pid” para los procesos de OSSEC
 
 El fichero clave para la configuración es /var/ossec/etc/ossec.conf, que se divide en varios apartados, 
 según el servicio a configurar.
 
-global (global);
-rules (rules);
-syscheck (syscheck/rootcheck);
-alerts (alert);
-active-response (command/active-response);
-collector (localfile);
+    a) global (global);
+    b) rules (rules);
+    c) syscheck (syscheck/rootcheck);
+    d) alerts (alert);
+    e) active-response (command/active-response);
+    f) collector (localfile);
+
 ### La sección global
 En éste apartado indicamos el correo electrónico que recibirá las notificaciones y las listas blancas de IP.
 
