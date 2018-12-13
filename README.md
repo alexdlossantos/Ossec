@@ -1,4 +1,7 @@
 # Ossec
+
+![ossec-01022014](https://user-images.githubusercontent.com/42847572/49968925-d4291800-feec-11e8-964c-8fca1f2a074f.jpg)
+
 ## ¿Para que nos puede servir OSSEC?
 Saber en todo momento que está pasando en nuestros sistemas.
 Parar ataques a nuestros sistemas.
@@ -27,11 +30,37 @@ syscheck (syscheck/rootcheck);
 alerts (alert);
 active-response (command/active-response);
 collector (localfile);
+La sección global
+En éste apartado indicamos el correo electrónico que recibirá las notificaciones y las listas blancas de IP.
 
-##Alertas 
-##Cliente
-##Global
-##Archivo local
-##Remoto
-##Rootcheck
-##Syslog
+
+Sección Collector
+Lista de todos los ficheros que utilizará el programa para monitorizar.
+
+
+Syscheck
+En ésta sección indicamos la frecuencia de los chequeos, los directorios a revisar y los que queremos excluir.
+
+
+Rules
+Sección donde se indican las ubicaciones de los ficheros que contienen las reglas.
+
+
+Alerts
+Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado inútil y 16 es el más alto, considerado crítico. Depende del nivel de alerta se envía o no un correo electrónico. Funcionan los envíos a partir del nivel 7. Dicho parámetro se puede modificar.
+
+<ossec_config> 
+    <alerts> 
+        <! - 
+        opciones de alertas aquí 
+        -> 
+    </alerts> 
+</ossec_config>
+
+### Alertas 
+### Cliente
+### Global
+### Archivo local
+### Remoto
+### Rootcheck
+### Syslog
