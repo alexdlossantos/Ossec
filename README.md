@@ -68,7 +68,7 @@ Sección donde se indican las ubicaciones de los ficheros que contienen las regl
 ### Alerts
 Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado inútil y 16 es el más alto, considerado crítico. Depende del nivel de alerta se envía o no un correo electrónico. Funcionan los envíos a partir del nivel 7. Dicho parámetro se puede modificar.
 
-    a) <ossec_config> 
+    e) <ossec_config> 
        <alerts> 
         < - 
         opciones de alertas aquí 
@@ -76,14 +76,14 @@ Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado i
         </alerts> 
         </ossec_config>
 
-## Crear "Ossec.conf"
-### Global
+# Crear "Ossec.conf"
+## Global
 
 
-### Archivo local
+## Archivo local
 
 
-### Alertas 
+## Alertas 
 
      ) <ossec_config> 
        <alerts> 
@@ -113,7 +113,7 @@ Predeterminado: 1
 
 Permitido: Cualquier nivel de 1 a 16.
 
-### Cliente
+## Cliente
 
      ) <ossec_config> 
        <client> 
@@ -159,9 +159,9 @@ Tiempo en segundos hasta un intento de reconexión. Esto debe establecerse en un
 
 
 
-### Remoto
-### Rootcheck
-### Syslog
+## Remoto
+## Rootcheck
+## Syslog
 
      )  <ossec_config> 
         <syslog_output> 
