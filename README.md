@@ -79,6 +79,85 @@ Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado i
 # Crear "Ossec.conf"
 ## Global
 
+    ) <ossec_config> 
+      <global> 
+      <- 
+      Opciones globales aquí 
+      -> 
+      </global> 
+      </ossec_config>
+
+#### email_notification
+Habilitar o deshabilitar las alertas de correo electrónico.
+
+Predeterminado: no
+
+Permitido: si / no
+
+#### email_to
+E-mail del destinatario de las alertas.
+
+Permitido: Cualquier dirección de correo electrónico válida
+
+#### email_from¶
+E-mail "fuente" de las alertas.
+
+Permitido: Cualquier dirección de correo electrónico válida
+
+#### smtp_server
+Servidor SMTP.
+
+Permitido: cualquier nombre de host o dirección IP válido
+
+#### email_maxperhour
+Especifica el número máximo de correos electrónicos que se enviarán por hora. Todos los correos electrónicos que excedan esta configuración se pondrán en cola para su posterior distribución.
+
+Predeterminado: 12
+
+Permitido: Cualquier número del 1 al 9999
+
+#### custom_alert_output
+Especifica el formato de las alertas escritas en el archivo de registro.
+
+#### stats
+Nivel de alerta para los eventos generados por el análisis estadístico.
+
+Predeterminado: 8
+
+Permitido: Cualquier nivel de 0 a 16.
+
+#### logall
+Indica si debemos almacenar todos los eventos recibidos.
+
+Predeterminado: no
+
+Permitido: si / no
+
+#### memory_size
+Establece el tamaño de memoria para la correlación de eventos.
+
+Predeterminado: 1024
+
+Permitido: cualquier tamaño de 16 a 5096
+
+#### white_list
+Lista de direcciones IP que nunca deben ser bloqueadas por la respuesta activa (una por elemento). Esta opción solo es válida en instalaciones locales y de servidor.
+
+Múltiplos Permitidos: si
+
+Permitido: Cualquier dirección IP o netblock
+
+#### host_infomation
+Nivel de alerta para los eventos generados por el monitor de cambio de host.
+
+Predeterminado: 8
+
+Permitido: Cualquier nivel de 0 a 16.
+
+#### jsonout_output
+Habilite o inhabilite la escritura de alertas con formato json en /var/ossec/logs/alerts/alerts.json
+
+Predeterminado: no Permitido: sí / no
 
 ## Archivo local
 
@@ -239,7 +318,7 @@ Predeterminado: udp
 
 Permitido: udp o tcp
 
-####allowed-ips
+#### allowed-ips
 Lista de direcciones IP que pueden enviar mensajes de syslog al servidor (uno por elemento).
 
 Permitido: cualquier dirección IP o red
