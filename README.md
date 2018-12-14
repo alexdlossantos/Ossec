@@ -82,6 +82,53 @@ Aquí señalamos el nivel de las alertas. 0 es el nivel más bajo, considerado i
 
 ## Archivo local
 
+    ) <ossec_config> 
+      <localfile> 
+      <- 
+      Opciones de Localfile aquí 
+      -> 
+      </localfile> 
+      </ossec_config>
+      
+#### location
+Especifique la ubicación del registro a leer
+
+#### syslog
+Este formato es para archivos de texto plano en un formato similar a syslog. También se puede utilizar cuando no hay soporte para el formato de registro y los registros son mensajes de una sola línea.
+
+#### resoplido
+Esto se utiliza para el formato de salida completo de Snort.
+
+#### resoplido
+Esto se utiliza para el formato de salida rápida de Snort.
+
+#### mysql_log
+Esto se utiliza para los registros de MySQL . No es compatible con los registros de varias líneas.
+
+#### postgresql_log
+Esto se utiliza para los registros de PostgreSQL . No es compatible con los registros de varias líneas.
+
+#### nmapg
+Esto se usa para monitorear archivos que se ajustan a la salida grepable de nmap .
+
+#### apache
+Este formato es para el formato de registro predeterminado de apache.
+
+#### mando
+Este formato será el resultado del comando (como se ejecuta por la raíz) definido por el comando . Cada línea de salida se tratará como un registro separado.
+
+#### full_command
+Este formato será el resultado del comando (como se ejecuta por la raíz) definido por el comando . Toda la salida se tratará como un solo registro.
+
+#### command
+El comando a ejecutar. Todos los resultados de este comando se leerán como uno o más mensajes de registro, dependiendo de si se usa el comando o full_command .
+
+Permitido: Cualquier línea de comando y argumentos.
+
+#### frequency
+El tiempo mínimo en segundos entre las ejecuciones del comando. Es probable que el comando no se ejecute frequencyexactamente cada segundo, pero el tiempo entre ejecuciones no será más corto que este ajuste. Esto se usa con el comando y full_command.
+
+
 
 ## Alertas 
 
