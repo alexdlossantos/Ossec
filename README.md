@@ -158,9 +158,202 @@ Especifica el tiempo en segundos entre los mensajes de información enviados por
 Tiempo en segundos hasta un intento de reconexión. Esto debe establecerse en un número más alto que el notificar tiempo.
 
 
-
 ## Remoto
+
+    ) <ossec_config>
+      <remote>
+      <--
+      remote options here
+      -->
+      </remote>
+      </ossec_config>
+
+#### Opciones 
+#### connection
+Especifique el tipo de conexión que se habilita: segura o usando syslog.
+
+Predeterminado: seguro
+
+Permitido: seguro / syslog
+
+#### port
+Especifica el puerto para escuchar eventos.
+
+Defecto:
+
+1514: si la conexión está configurada para asegurar
+514: si la conexión se establece en syslog
+Permitido: cualquier número de puerto de 1 a 65535
+
+#### protocol
+Especifica el protocolo a utilizar para eventos de syslog.
+
+Predeterminado: udp
+
+Permitido: udp o tcp
+
+####allowed-ips
+Lista de direcciones IP que pueden enviar mensajes de syslog al servidor (uno por elemento).
+
+Permitido: cualquier dirección IP o red
+
+#### Nota
+
+Es necesario permitir al menos una dirección IP cuando se utiliza el tipo de conexión syslog.
+
+#### deny-ips
+Lista de direcciones IP que no pueden enviar mensajes de syslog al servidor (uno por elemento).
+
+Permitido: cualquier dirección IP o red
+
+#### local_ip
+Dirección IP local para escuchar conexiones.
+
+Predeterminado: todas las interfaces
+
+Permitido: Cualquier dirección IP interna
+
+#### ipv6
+Dirección ipv6 local para escuchar conexiones.
+
+Predeterminado: Ninguno
+
+Permitido: Cualquier dirección IPv6.
+
 ## Rootcheck
+    ) <ossec_config> 
+      <rootcheck> 
+      <- 
+      opciones de comprobación de raíz aquí 
+      -> 
+      </rootcheck> 
+      </ossec_config>
+      
+      Permitido: Ruta a un directorio Predeterminado: / var / ossec
+
+#### rootkit_files
+Esta opción se puede utilizar para cambiar la ubicación de la base de datos de archivos de rootkit.
+
+Permitido: Un archivo con las firmas de los archivos de rootkit.
+
+Por defecto: /etc/shared/rootkit_files.txt
+
+#### rootkit_trojans
+Esta opción se puede utilizar para cambiar la ubicación de la base de datos de troyanos de rootkit.
+
+Por defecto: /etc/shared/rootkit_trojans.txt
+
+Permitido: Un archivo con las firmas de los troyanos.
+
+windows_audit
+system_audit
+windows_apps
+windows_malware
+scanall
+Le dice a rootcheck que analice todo el sistema (puede llevar a algunos falsos positivos).
+
+Predeterminado: no
+
+Permitido: si / no
+
+#### frequency
+Frecuencia con la que se ejecutará el rootcheck (en segundos).
+
+Valores predeterminados: 36000 (10 horas)
+
+Permitido: Tiempo (en segundos)
+
+#### disabled
+Desactiva la ejecución de rootcheck.
+
+Predeterminado: no
+
+Permitido: si / no
+
+#### check_dev
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_files
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_if
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_pids
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_policy
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_ports
+Habilitar o deshabilitar la comprobación de puertos de red.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_sys
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_trojans
+Habilitar o deshabilitar la comprobación de troyanos.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_unixaudit
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_winapps
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: si
+
+Permitido: si o no
+
+#### check_winaudit
+Habilitar o deshabilitar la comprobación de algo.
+
+Predeterminado: 1
+
+Permitido: 1 o 0
+
+#### skip_nfs
+Especifica si rootcheck debe analizar los sistemas de archivos montados en la red. Funciona en Linux y FreeBSD. Actualmente, skip_nfs cancelará las comprobaciones que se ejecuten en montajes CIFS o NFS.
+
+Predeterminado: no
+
+Permitido: si / no
+
 ## Syslog
 
      )  <ossec_config> 
